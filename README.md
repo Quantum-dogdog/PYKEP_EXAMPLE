@@ -15,6 +15,83 @@ pykep是用来设置问题的参数，pygmo是用来设置求解的算法。
 
 为了避免冲突，需要先安装pygmo，再安装pykep.
 
+# 结果
+
+1.eveej_pso.py是用粒子群算法优化的，求出来的结果（只代表本次优化过程）是：
+
+Running a 粒子群优化
+Done!! Solutions found are:  [13477.57246471]
+First Leg: earth to venus
+Departure: 2026-May-31 10:55:44.408813 (9647.455375102 mjd2000) 
+Duration: 183.2475506065751days
+VINF: 0.5 km/sec
+DSM after 63.28593125466642 days
+DSM magnitude: 2573.7350174836038m/s
+
+leg no. 2: venus to earth
+Duration: 331.8344858452072days
+Fly-by epoch: 2026-Nov-30 16:52:12.781221 (9830.702925708574 mjd2000) 
+Fly-by radius: 19.638534868101782 planetary radii
+DSM after 58.86912433451865 days
+DSM magnitude: 1648.0053370206726m/s
+
+leg no. 3: earth to earth
+Duration: 371.2095624791099days
+Fly-by epoch: 2027-Oct-28 12:53:52.358247 (10162.537411553782 mjd2000) 
+Fly-by radius: 19.254657222855847 planetary radii
+DSM after 81.44487852168257 days
+DSM magnitude: 353.45540091583905m/s
+
+leg no. 4: earth to jupiter
+Duration: 1063.3929599076166days
+Fly-by epoch: 2028-Nov-02 17:55:38.556442 (10533.746974032892 mjd2000) 
+Fly-by radius: 1.1000091823515603 planetary radii
+DSM after 106.33929599076167 days
+DSM magnitude: 2939.0487421303183m/s
+
+Arrival at jupiter
+Arrival epoch: 2031-Oct-02 03:21:30.292460 (11597.139933940509 mjd2000) 
+Arrival Vinf: 5463.327967163263m/s
+Total mission time: 5.337945404075315 years (1949.6845588385088 days)
+
+2.eveej_sade.py是用自适应差分进化算法优化的，求出来的结果（只代表本次优化过程）是：
+
+Running a Self-Adaptive Differential Evolution Algorithm .... on 10 parallel islands
+Done!! Solutions found are:  [array([15713.05664449]), array([16656.70413232]), array([14279.91109301]), array([15135.13956289]), array([16224.04756102]), array([14285.14082974]), array([14669.08043566]), array([17742.36866846]), array([17591.52337764]), array([15219.12117911])]
+First Leg: earth to venus
+Departure: 2029-Jul-13 07:13:08.776618 (10786.300796025673 mjd2000) 
+Duration: 251.63805121091218days
+VINF: 0.5986942562577509 km/sec
+DSM after 72.30612279191512 days
+DSM magnitude: 3111.501468631372m/s
+
+leg no. 2: venus to earth
+Duration: 298.8801281125808days
+Fly-by epoch: 2030-Mar-21 22:31:56.401241 (11037.938847236584 mjd2000) 
+Fly-by radius: 6.078092088349982 planetary radii
+DSM after 82.05682721771234 days
+DSM magnitude: 455.0872958396139m/s
+
+leg no. 3: earth to earth
+Duration: 363.1291614647999days
+Fly-by epoch: 2031-Jan-14 19:39:19.470168 (11336.818975349166 mjd2000) 
+Fly-by radius: 24.223585805875857 planetary radii
+DSM after 167.3553557442532 days
+DSM magnitude: 160.29373633443353m/s
+
+leg no. 4: earth to jupiter
+Duration: 1095.682259836169days
+Fly-by epoch: 2032-Jan-12 22:45:19.020727 (11699.948136813966 mjd2000) 
+Fly-by radius: 1.1375040798527287 planetary radii
+DSM after 209.5309864766393 days
+DSM magnitude: 5612.921315074164m/s
+
+Arrival at jupiter
+Arrival epoch: 2035-Jan-12 15:07:46.270572 (12795.630396650135 mjd2000) 
+Arrival Vinf: 4341.413020874829m/s
+Total mission time: 5.501244628677513 years (2009.3296006244618 days)
+
+3.从结果分析，DSM都很大，现实世界不会使用这么大的DSM，但是尚未找到限制DSM的参数。
 
 
 # packages in environment at e:\mambaforge\envs\esaEnv:
